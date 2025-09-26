@@ -182,9 +182,9 @@ const Index = () => {
                   <Icon name="Users" size={20} />
                   Вакансии
                 </CardTitle>
-                <CardSubtitle className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground mt-1">
                   Присоединяйтесь к нашей команде
-                </CardSubtitle>
+                </p>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
