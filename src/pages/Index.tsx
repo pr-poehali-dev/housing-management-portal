@@ -18,15 +18,35 @@ const Index = () => {
     message: "",
   });
 
-  const districts = [
-    { id: 1, name: "Участок №1", houses: 45 },
-    { id: 2, name: "Участок №2", houses: 38 },
-    { id: 3, name: "Участок №3", houses: 52 },
-    { id: 4, name: "Участок №4", houses: 41 },
-    { id: 5, name: "Участок №5", houses: 36 },
-    { id: 6, name: "Участок №6", houses: 49 },
-    { id: 7, name: "Участок №7", houses: 33 },
-    { id: 8, name: "Участок №8", houses: 44 },
+  const vacancies = [
+    { 
+      id: 1, 
+      title: "Слесарь-сантехник", 
+      department: "Аварийная служба",
+      salary: "от 45 000 руб.",
+      schedule: "5/2"
+    },
+    { 
+      id: 2, 
+      title: "Дворник", 
+      department: "Благоустройство",
+      salary: "от 35 000 руб.",
+      schedule: "6/1"
+    },
+    { 
+      id: 3, 
+      title: "Электрик", 
+      department: "Техническая служба",
+      salary: "от 50 000 руб.",
+      schedule: "5/2"
+    },
+    { 
+      id: 4, 
+      title: "Управляющий домами", 
+      department: "Управление",
+      salary: "от 60 000 руб.",
+      schedule: "5/2"
+    },
   ];
 
   const news = [
@@ -159,46 +179,66 @@ const Index = () => {
             <Card className="subtle-shadow">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Icon name="MapPin" size={20} />
-                  Участки
+                  <Icon name="Users" size={20} />
+                  Вакансии
                 </CardTitle>
+                <CardSubtitle className="text-sm text-muted-foreground">
+                  Присоединяйтесь к нашей команде
+                </CardSubtitle>
               </CardHeader>
               <CardContent>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-accent mb-2">8</div>
-                  <div className="text-sm text-muted-foreground">
-                    участков в управлении
-                  </div>
-                  <div className="text-2xl font-bold text-foreground mt-2">
-                    338
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    домов всего
-                  </div>
+                <div className="space-y-3">
+                  {vacancies.slice(0, 2).map((vacancy) => (
+                    <div key={vacancy.id} className="p-3 rounded-lg bg-muted/50 border border-border/50 hover:border-accent/50 transition-colors">
+                      <h4 className="font-medium text-foreground mb-1">{vacancy.title}</h4>
+                      <p className="text-xs text-muted-foreground mb-2">{vacancy.department}</p>
+                      <div className="flex justify-between text-xs">
+                        <span className="text-accent font-medium">{vacancy.salary}</span>
+                        <span className="text-muted-foreground">{vacancy.schedule}</span>
+                      </div>
+                    </div>
+                  ))}
+                  <Button variant="outline" className="w-full mt-3" size="sm">
+                    <Icon name="ExternalLink" size={14} className="mr-2" />
+                    Все вакансии
+                  </Button>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {districts.map((district) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {vacancies.slice(2).map((vacancy) => (
               <Card
-                key={district.id}
+                key={vacancy.id}
                 className="hover:shadow-md transition-all duration-300 cursor-pointer hover:border-accent/50 subtle-shadow"
               >
                 <CardContent className="p-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center border border-accent/20">
-                      <Icon name="Building" size={16} className="text-accent" />
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center border border-accent/20 mt-1">
+                        <Icon name="Briefcase" size={16} className="text-accent" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-foreground mb-1">
+                          {vacancy.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground mb-2">
+                          {vacancy.department}
+                        </p>
+                        <div className="space-y-1">
+                          <div className="text-sm text-accent font-medium">
+                            {vacancy.salary}
+                          </div>
+                          <div className="text-xs text-muted-foreground">
+                            График: {vacancy.schedule}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-medium text-foreground">
-                        {district.name}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {district.houses} домов
-                      </p>
-                    </div>
+                    <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+                      <Icon name="ArrowRight" size={14} />
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
