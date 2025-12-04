@@ -314,6 +314,45 @@ const Index = () => {
           </div>
         </div>
 
+        {/* Photo Gallery Section */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-foreground mb-6">
+            Наша работа
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="relative overflow-hidden rounded-lg subtle-shadow group cursor-pointer">
+              <img 
+                src="https://cdn.poehali.dev/projects/5c5e82f7-536d-4d8a-8fb5-159fd904f565/files/237ad7d1-562b-45ec-84df-e00ded7d4fed.jpg"
+                alt="Жилые дома в управлении"
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
+                <p className="text-accent-foreground font-medium">Жилые дома в управлении</p>
+              </div>
+            </div>
+            <div className="relative overflow-hidden rounded-lg subtle-shadow group cursor-pointer">
+              <img 
+                src="https://cdn.poehali.dev/projects/5c5e82f7-536d-4d8a-8fb5-159fd904f565/files/23e420c5-ee40-42d5-b7d5-d8639c6b8cae.jpg"
+                alt="Офис управляющей компании"
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
+                <p className="text-accent-foreground font-medium">Офис управляющей компании</p>
+              </div>
+            </div>
+            <div className="relative overflow-hidden rounded-lg subtle-shadow group cursor-pointer">
+              <img 
+                src="https://cdn.poehali.dev/projects/5c5e82f7-536d-4d8a-8fb5-159fd904f565/files/6824033d-c45f-4437-b27a-bbb126693c18.jpg"
+                alt="Специалисты за работой"
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
+                <p className="text-accent-foreground font-medium">Специалисты за работой</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* News & Appeals Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* News */}
